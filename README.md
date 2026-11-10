@@ -1,6 +1,6 @@
-# Owner dashboard
+# ParkLink Web
 
-Read-only web interface for owners to monitor ParkLink activity.
+ParkLink's current web application is a read-only dashboard for owners to monitor activity.
 
 ## Responsibilities
 
