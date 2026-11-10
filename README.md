@@ -1,23 +1,23 @@
 # ParkLink Web
 
-ParkLink's current web application is a read-only dashboard for owners to monitor activity.
+La aplicación web actual de ParkLink es un panel de solo lectura para que los propietarios consulten su actividad.
 
-## Responsibilities
+## Responsabilidades
 
-- Connects through the Gateway to retrieve owner-facing information.
-- Does not replace the mobile publication and booking flows.
+- Consulta información para propietarios a través de la pasarela.
+- Actualmente no reemplaza los flujos de publicación ni de reserva de la aplicación móvil.
 
-## Technology
+## Tecnologías
 
-React, TypeScript, Vite.
+React, TypeScript y Vite.
 
-## C4 architecture
+## Arquitectura C4
 
-The diagram is a C4 **container view** focused on this repository and its relevant neighbors. It is generated from [Structurizr DSL](docs/architecture/workspace.dsl) using default styles, without custom colors. Arrows show the direction of an interaction; the full model also records message flows.
+El diagrama muestra una **vista de contenedores C4** centrada en este componente y sus relaciones relevantes. Se genera desde [Structurizr DSL](docs/architecture/workspace.dsl) con los estilos predeterminados, sin colores personalizados. Las flechas indican la dirección de cada interacción. El diagrama se conserva en inglés.
 
-![C4 container view: Owner dashboard](docs/architecture/containers.svg)
+![Diagrama C4 de ParkLink Web](docs/architecture/containers.svg)
 
-To inspect or regenerate the diagram, open `docs/architecture/workspace.dsl` in Structurizr. With the Structurizr CLI and Graphviz installed:
+Para consultar o regenerar el diagrama, abra `docs/architecture/workspace.dsl` en Structurizr. Con Structurizr CLI y Graphviz instalados:
 
 ```sh
 structurizr.sh validate -workspace docs/architecture/workspace.dsl
@@ -26,13 +26,13 @@ structurizr.sh export -workspace docs/architecture/workspace.dsl -format dot -ou
 dot -Tsvg /tmp/parklink-diagram/structurizr-Containers.dot -o docs/architecture/containers.svg
 ```
 
-## Build in the integrated workspace
+## Compilación en el espacio integrado
 
 ```sh
 npm ci
 npm run build -w @parklink/owner-dashboard
 ```
 
-## Repository boundary
+## Relación con el proyecto
 
-This repository is a snapshot of `apps/owner-dashboard` from [parklink-platform](https://github.com/1ASI0728-2620-16363-ParkLink/parklink-platform). Use the integrated workspace for the root npm configuration, shared dependencies, Docker build context, tests and local infrastructure. The repositories do not automatically synchronize.
+Este repositorio es una copia independiente de `apps/owner-dashboard` en [parklink-platform](https://github.com/1ASI0728-2620-16363-ParkLink/parklink-platform). Use el espacio integrado para la configuración npm, las dependencias compartidas, el contexto de Docker, las pruebas y la infraestructura local. Los repositorios no se sincronizan automáticamente.
